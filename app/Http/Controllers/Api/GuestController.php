@@ -12,7 +12,7 @@ class GuestController extends Controller
 {
     public function index()
     {
-        // untuk show data resto
+        // untuk show data guest
         $guest = guest::all();
 
         if(count($guest) > 0)
