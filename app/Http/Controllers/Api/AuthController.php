@@ -83,7 +83,7 @@ class AuthController extends Controller
         if(count($user) > 0)
         {
             return response([
-                'message' => 'Retrieve All restoran Success',
+                'message' => 'Retrieve All Guest Success',
                 'data' => $user
             ], 200);
         }
@@ -101,7 +101,7 @@ class AuthController extends Controller
         if(is_null($user))
         {
             return response([
-                'message' => 'Restoran Not Found',
+                'message' => 'Guest Not Found',
                 'data' => null
             ], 404);
         }
@@ -128,13 +128,13 @@ class AuthController extends Controller
         if($user->save())
         {
             return response([
-                'message' => 'Update Restoran Success',
+                'message' => 'Update Guest Success',
                 'data' => $user
             ], 200);
         }
 
         return response([
-            'message' => 'Update Restoran Failed',
+            'message' => 'Update Guest Failed',
             'data' => null
         ], 400);
     }
@@ -146,7 +146,7 @@ class AuthController extends Controller
 
         if(is_null($user)) {
             return response([
-                'message' => 'Restoran Not Found',
+                'message' => 'Guest Not Found',
                 'data' => null
             ], 404);
         }
@@ -154,13 +154,13 @@ class AuthController extends Controller
         if($user->delete())
         {
             return response ([
-                'message' => 'Delete Restoran Success',
+                'message' => 'Delete Guest Success',
                 'data' => $user
             ], 200);
         }
 
         return response ([
-            'message' => 'Delete Restoran Failed',
+            'message' => 'Delete Guest Failed',
             'data' => null,
         ], 400);
     }
