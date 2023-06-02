@@ -77,13 +77,13 @@ class AuthController extends Controller
 
     public function index()
     {
-        // untuk show data guest
+        // untuk show data user
         $user = user::all();
 
         if(count($user) > 0)
         {
             return response([
-                'message' => 'Retrieve All Guest Success',
+                'message' => 'Retrieve All User Success',
                 'data' => $user
             ], 200);
         }
@@ -96,12 +96,12 @@ class AuthController extends Controller
 
     public function update(Request $request, $id)
     {
-        //untuk mengubah 1 data guest
+        //untuk mengubah 1 data user
         $user = user::find($id);
         if(is_null($user))
         {
             return response([
-                'message' => 'Guest Not Found',
+                'message' => 'User Not Found',
                 'data' => null
             ], 404);
         }
@@ -128,13 +128,13 @@ class AuthController extends Controller
         if($user->save())
         {
             return response([
-                'message' => 'Update Guest Success',
+                'message' => 'Update User Success',
                 'data' => $user
             ], 200);
         }
 
         return response([
-            'message' => 'Update Guest Failed',
+            'message' => 'Update User Failed',
             'data' => null
         ], 400);
     }
@@ -146,7 +146,7 @@ class AuthController extends Controller
 
         if(is_null($user)) {
             return response([
-                'message' => 'Guest Not Found',
+                'message' => 'User Not Found',
                 'data' => null
             ], 404);
         }
@@ -154,13 +154,13 @@ class AuthController extends Controller
         if($user->delete())
         {
             return response ([
-                'message' => 'Delete Guest Success',
+                'message' => 'Delete User Success',
                 'data' => $user
             ], 200);
         }
 
         return response ([
-            'message' => 'Delete Guest Failed',
+            'message' => 'Delete User Failed',
             'data' => null,
         ], 400);
     }
