@@ -47,7 +47,7 @@ class GuestController extends Controller
     //  */
     public function store(Request $request)
     {
-        // untuk menambahkan data resto baru
+        // untuk menambahkan data guest baru
         $guestData = $request->all();
         $validate = Validator::make($guestData, [
             'nama_tamu' => 'required|max:60',
@@ -68,7 +68,7 @@ class GuestController extends Controller
 
         $guest = guest::create($guestData);
         return response([
-            'message' => 'Add Restoran Success',
+            'message' => 'Add Guest Success',
             'data' => $guest
         ], 200);
     }
@@ -81,7 +81,7 @@ class GuestController extends Controller
     //  */
     public function show($id)
     {
-        // untuk show resto berdasarkan pencarian
+        // untuk show guest berdasarkan pencarian
         $guest = guest::find($id);
 
         if(!is_null($guest)) {
@@ -117,7 +117,7 @@ class GuestController extends Controller
     //  */
     public function update(Request $request, $id)
     {
-        //untuk mengubah 1 data umkm
+        //untuk mengubah 1 data guest
         $guest = guest::find($id);
         if(is_null($guest))
         {
@@ -176,7 +176,7 @@ class GuestController extends Controller
     //  */
     public function destroy($id)
     {
-        // untuk menghapus data
+        // untuk menghapus data guest
         $guest = guest::find($id);
 
         if(is_null($guest)) {
