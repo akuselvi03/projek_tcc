@@ -46,6 +46,9 @@ ENV DB_DATABASE=hotelDb
 ENV DB_USERNAME=hotel
 ENV DB_PASSWORD=hotel
 
+RUN php artisan passport:install --force
+RUN php artisan passport:client --personal
+
 #set permissions for storage and bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage
 RUN chown -R www-data:www-data /var/www/html/bootstrap/cache
