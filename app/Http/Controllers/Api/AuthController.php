@@ -77,7 +77,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        // untuk show data resto
+        // untuk show data guest
         $user = user::all();
 
         if(count($user) > 0)
@@ -96,7 +96,7 @@ class AuthController extends Controller
 
     public function update(Request $request, $id)
     {
-        //untuk mengubah 1 data umkm
+        //untuk mengubah 1 data guest
         $user = user::find($id);
         if(is_null($user))
         {
